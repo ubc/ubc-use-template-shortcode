@@ -8,7 +8,7 @@ namespace UBC\Shortcode;
  * Plugin Name:       UBC Use Template Shortcode
  * Plugin URI:        http://ctlt.ubc.ca/
  * Description:       A shortcode to allow you to use a PHP template to output content
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Richard Tape
  * Author URI:        http://blogs.ubc.ca/mbcx9rvt
  * License:           GPL-2.0+
