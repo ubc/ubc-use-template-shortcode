@@ -200,6 +200,8 @@ class Use_Template {
 		// Run it through a filter so we can modify outside should someone wish to add
 		$content 	= apply_filters( 'ubc_use_template_content', $content, $data, $department, $template );
 
+		do_action( 'ubc_use_template_end', $content, $data, $department, $template );
+
 		return wp_kses_post( $content );
 
 	}/* add_shortcode__ubc_template() */
