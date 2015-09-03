@@ -71,15 +71,15 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 				<div class="iso-description hidden">
 					<?php the_content(); ?>
-					<?php echo esc_html( $department ); ?>
-					<?php echo esc_html( $location ); ?>
+					<?php echo wp_kses_post( $department ); ?>
+					<?php echo wp_kses_post( $location ); ?>
 				</div>
 
 				<div class="excerpt">
 
 					<div class="location">
-						<?php echo esc_html( $location ); ?>
-						<small><?php echo esc_html( $department ); ?></small>
+						<?php echo wp_kses_post( $location ); ?>
+						<small><?php echo wp_kses_post( $department ); ?></small>
 					</div>
 
 				</div>
@@ -103,19 +103,19 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 						<div class="span12">
 
-							<img class="pull-right visible-desktop visible-tablet alignright featured-images-pages" src="<?php echo esc_html( $post_thumbnail ); ?>" alt="" />
+							<img class="pull-right visible-desktop visible-tablet alignright featured-images-pages" src="<?php echo wp_kses_post( $post_thumbnail ); ?>" alt="" />
 							<h3 class="post-title"><a href="<?php esc_url( $programlink ); ?>"><?php the_title(); ?></a></h3>
 
 							<div class="modal-body-content">
 
 								<div class="modal-location">
-									<?php echo esc_html( $location ); ?>
+									<?php echo wp_kses_post( $location ); ?>
 								</div>
 
 								<?php the_content(); ?>
 
 								<div class="modal-excerpt">
-									<?php echo esc_html( $department ); ?>
+									<?php echo wp_kses_post( $department ); ?>
 								</div>
 
 								<div class="modal-icons-set">
