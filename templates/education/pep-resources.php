@@ -1,5 +1,4 @@
 <?php
-<?php
 
 /**
  * A template for the PEP Resources page.  http://pacificedpress-educ.sites.olt.ubc.ca/resources/
