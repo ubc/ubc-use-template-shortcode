@@ -19,12 +19,12 @@ $content 			= get_the_content();
 
 <div class="accordion-group">
 	<div class="accordion-heading">
-		<a class="accordion-toggle" href="#<?php echo absint( $post_id ); ?>" data-toggle="collapse" data-parent=".courses"><?php the_title_attribute(); ?>
+		<a class="accordion-toggle" href="#<?php echo absint( $post_id ); ?>" data-toggle="collapse" data-parent=".courses"><?php the_title(); ?>
 		</a>
 	</div>
 	<div id="<?php echo absint( $post_id ); ?>" class="accordian-shortcode-content accordion-body collapse">
 		<div class="accordion-inner"><?php the_content(); ?>
-			<strong>Course Link:</strong><a href="<?php echo get_permalink(); ?>" target="_blank"><?php the_title_attribute(); ?></a>
+			<strong>Course Link:</strong><a href="<?php echo get_permalink(); ?>" target="_blank"><?php the_title(); ?></a>
 		</div>
 	</div>
 </div>
