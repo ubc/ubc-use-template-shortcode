@@ -13,13 +13,13 @@ $post_id 			= get_the_ID();
 $the_title          = get_the_title();
 
 // Some custom fields
-$location			= get_post_meta( absint( $post_id ), 'Location', true );
-$description		= get_post_meta( absint( $post_id ), 'Description', true );
-$session 	    	= get_post_meta( absint( $post_id ), 'Session', true );
-$website            = get_post_meta( absint( $post_id ), 'Website', true );
-$theme              = get_post_meta( absint( $post_id ), 'Theme', true );
-$address            = get_post_meta( absint( $post_id ), 'Physical Address', true );
-$age                = get_post_meta( absint( $post_id ), 'Age Group', true );
+$location			= get_post_meta( absint( $post_id ), 'location', true );
+$description		= get_post_meta( absint( $post_id ), 'description', true );
+$session 	    	= get_post_meta( absint( $post_id ), 'session', true );
+$website            = get_post_meta( absint( $post_id ), 'website', true );
+$theme              = get_post_meta( absint( $post_id ), 'theme', true );
+$address            = get_post_meta( absint( $post_id ), 'physical_address', true );
+$age                = get_post_meta( absint( $post_id ), 'age_group', true );
 
 // How to get the post thumbnail
 $post_thumbnail 	= wp_get_attachment_url( get_post_thumbnail_id( absint( $post_id ) ) );
