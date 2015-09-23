@@ -9,11 +9,9 @@
  */
 
 // Fetch the post ID for the currently set up post - we're in the loop
-$post_id 			= get_the_ID();
+$post_id 		= get_the_ID();
 
 $title 			= get_the_title();
-
-$content 			= get_the_content();
 
 ?>
 
@@ -24,7 +22,7 @@ $content 			= get_the_content();
 	</div>
 	<div id="<?php echo absint( $post_id ); ?>" class="accordian-shortcode-content accordion-body collapse">
 		<div class="accordion-inner"><?php the_content(); ?>
-			<strong>Course Link:</strong><a href="<?php echo get_permalink(); ?>" target="_blank"><?php the_title(); ?></a>
+			<strong>Course Link:</strong><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo esc_html( $title ); ?></a>
 		</div>
 	</div>
 </div>
