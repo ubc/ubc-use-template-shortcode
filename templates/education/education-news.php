@@ -61,7 +61,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 				
 				<h3 class="post-title">
 
-				<div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" target="_blank" title="<?php the_title_attribute(); ?>" class="fancybox-inline"><?php the_title_attribute(); ?></a>
+				<div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" target="_blank" title="<?php the_title_attribute(); ?>" class="fancybox-inline"><?php the_title(); ?></a>
 
 				</div>
 
