@@ -19,7 +19,7 @@ $plain_tags_slug 	= \UBC\Helpers::get_plain_tags( absint( $post_id ), 'slug', ' 
 // Replacement for [plain_term_slug]
 $plain_term_slug 	= \UBC\Helpers::get_plain_terms( absint( $post_id ), 'slug', ' ' );
 
-// Replacement for [odd-even] but *really* this should be done in CSS.
+// Replacement for [odd-even]
 global $usage_id;
 $usage_id++;
 $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
