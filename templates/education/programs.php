@@ -76,8 +76,8 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 				<div class="iso-description hidden">
 					<?php the_content(); ?>
-					<?php echo esc_attr( $department ); ?>
-					<?php echo esc_attr( $location ); ?>
+					<?php echo esc_html( $department ); ?>
+					<?php echo esc_html( $location ); ?>
 					<?php echo esc_html( $the_title ); ?>
 				</div>
 
@@ -85,7 +85,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 					<div class="location">
 						<?php echo esc_html( $location ); ?>
-						<small><?php echo sanitize_text_field( $department ); ?></small>
+						<small><?php echo wp_kses_post( $department ); ?></small>
 					</div>
 
 				</div>
