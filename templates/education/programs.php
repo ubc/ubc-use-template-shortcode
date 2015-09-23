@@ -1,8 +1,9 @@
 <?php
 
 /**
- * A template for the Education Programs. This is also an example of how to use
- * and correctly escape content to be output.
+ * A template for the Education Programs page.  http://educ.sites.olt.ubc.ca/programs/
+ * This is also an example of how to use and correctly escape content to be output. 
+ * 
  *
  * This template is loaded using output buffering, which means you should probably
  * not use output buffering in here.
@@ -35,6 +36,10 @@
 // Fetch the post ID for the currently set up post - we're in the loop
 $post_id 			= get_the_ID();
 
+//Fetch post title
+
+$the_title          = get_the_title();
+
 // Some custom fields
 $location			= get_post_meta( absint( $post_id ), 'location', true );
 $department 		= get_post_meta( absint( $post_id ), 'department', true );
@@ -66,20 +71,21 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 			<div class="boxey-inner">
 
 				<div class="iso-title">
-					<?php the_title(); ?>
+					<?php echo esc_html( $the_title ); ?>
 				</div>
 
 				<div class="iso-description hidden">
 					<?php the_content(); ?>
-					<?php echo esc_html( $department ); ?>
-					<?php echo esc_html( $location ); ?>
+					<?php echo esc_attr( $department ); ?>
+					<?php echo esc_attr( $location ); ?>
+					<?php echo esc_html( $the_title ); ?>
 				</div>
 
 				<div class="excerpt">
 
 					<div class="location">
 						<?php echo esc_html( $location ); ?>
-						<small><?php echo esc_html( $department ); ?></small>
+						<small><?php echo sanitize_text_field( $department ); ?></small>
 					</div>
 
 				</div>
@@ -87,14 +93,15 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 			</div><!-- .boxey-inner -->
 
 		</div><!-- .boxey-inside -->
+        
+<a href="#modal_<?php echo absint( $post_id ); ?>" target="_blank" class="fancybox-inline"><span class="link-spanner"></span></a>
 
-		<!-- Start Modal -->
-		<div id="modal_<?php echo absint( $post_id ); ?>" class="modal fade hide container" tabindex="-1">
-
-			<div class="<?php echo esc_attr( $plain_tags_slug ); ?>">
+<!-- Start Modal -->
+<div style="display:none">
+            
+        <div id="modal_<?php echo absint( $post_id ); ?>" class="span9 fancystyle">
 
 				<div class="modal-header <?php echo esc_attr( $plain_tags_slug ); ?>">
-					<button class="close" type="button" data-dismiss="modal">×</button>
 				</div><!-- .modal-header -->
 
 				<div class="modal-body">
@@ -130,18 +137,18 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 								</div>
 
-							</div>
+							</div><!-- end .modal-body-content-->
 
-						</div>
+						</div><!--  end.span12 -->
 
-					</div><!-- .row-fluid -->
+					</div><!--  end.row-fluid -->
 
-				</div><!-- .modal-body -->
+				</div><!-- end .modal-body -->
 
-			</div>
+		</div><!--  end #modal_theID -->
 
-		</div><!-- .modal -->
+	</div><!-- end display:none -->
 
-	</div>
+</div><!--  end .boxey -->
 
-</div>
+</div><!--  end #the_ID -->
