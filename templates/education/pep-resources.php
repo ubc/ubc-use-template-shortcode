@@ -34,9 +34,9 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 			<div class="boxey-inner">
 
-				<a title="<?php echo esc_html( $the_title ); ?>" href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a>
+				<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a>
 
-				<h3 class="post-title"><div class="iso-title"><a href="<?php the_permalink(); ?>" target="_blank" title="<?php echo esc_html( $the_title ); ?>"><?php echo esc_html( $the_title ); ?></a></div></h3>
+				<h3 class="post-title"><div class="iso-title"><a href="<?php the_permalink(); ?>" target="_blank" title="<?php the_title_attribute(); ?>"><?php echo esc_html( $the_title ); ?></a></div></h3>
 
 				<div class="iso-description hidden"><?php echo esc_html( $the_title ); ?></div>
 
