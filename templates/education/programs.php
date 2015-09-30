@@ -1,5 +1,4 @@
 <?php
-
 /**
  * A template for the Education Programs. This is also an example of how to use
  * and correctly escape content to be output.
@@ -31,30 +30,23 @@
  * use them sparingly - WITH ESCAPING - in the markup
  *
  */
-
 // Fetch the post ID for the currently set up post - we're in the loop
 $post_id 			= get_the_ID();
-
 // Some custom fields
 $location			= get_post_meta( absint( $post_id ), 'location', true );
 $department 		= get_post_meta( absint( $post_id ), 'department', true );
 $programlink 		= get_post_meta( absint( $post_id ), 'programlink', true );
 $applylink 			= get_post_meta( absint( $post_id ), 'applylink', true );
-
 // How to get the post thumbnail
 $post_thumbnail 	= wp_get_attachment_url( get_post_thumbnail_id( absint( $post_id ) ) );
-
 // Replacement for [plain_tags_slug]
 $plain_tags_slug 	= \UBC\Helpers::get_plain_tags( absint( $post_id ), 'slug', ' ' );
-
 // Replacement for [plain_term_slug]
 $plain_term_slug 	= \UBC\Helpers::get_plain_terms( absint( $post_id ), 'slug', ' ' );
-
 // Replacement for [odd-even] but *really* this should be done in CSS.
 global $usage_id;
 $usage_id++;
 $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
-
 ?>
 
 <div id="<?php echo absint( $post_id ); ?>" class="<?php echo esc_attr( $plain_tags_slug ); ?>">
@@ -71,15 +63,15 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 				<div class="iso-description hidden">
 					<?php the_content(); ?>
-					<?php echo esc_html( $department ); ?>
-					<?php echo esc_html( $location ); ?>
+					<?php echo wp_kses_post( $department ); ?>
+					<?php echo wp_kses_post( $location ); ?>
 				</div>
 
 				<div class="excerpt">
 
 					<div class="location">
-						<?php echo esc_html( $location ); ?>
-						<small><?php echo esc_html( $department ); ?></small>
+						<?php echo wp_kses_post( $location ); ?>
+						<small><?php echo wp_kses_post( $department ); ?></small>
 					</div>
 
 				</div>
@@ -103,19 +95,19 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 						<div class="span12">
 
-							<img class="pull-right visible-desktop visible-tablet alignright featured-images-pages" src="<?php echo esc_html( $post_thumbnail ); ?>" alt="" />
+							<img class="pull-right visible-desktop visible-tablet alignright featured-images-pages" src="<?php echo wp_kses_post( $post_thumbnail ); ?>" alt="" />
 							<h3 class="post-title"><a href="<?php esc_url( $programlink ); ?>"><?php the_title(); ?></a></h3>
 
 							<div class="modal-body-content">
 
 								<div class="modal-location">
-									<?php echo esc_html( $location ); ?>
+									<?php echo wp_kses_post( $location ); ?>
 								</div>
 
 								<?php the_content(); ?>
 
 								<div class="modal-excerpt">
-									<?php echo esc_html( $department ); ?>
+									<?php echo wp_kses_post( $department ); ?>
 								</div>
 
 								<div class="modal-icons-set">
