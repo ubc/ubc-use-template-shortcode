@@ -9,5 +9,5 @@
 
 ?>
 <div class=" boxey <?php foreach(get_the_category() as $category) {
-echo $category->slug . ' ';} ?>">
+echo esc_attr( $category->slug . ' ' );} ?>">
 
