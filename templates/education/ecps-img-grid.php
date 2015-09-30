@@ -61,7 +61,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 					
 					<div class="span12">
 					
-					<h3 class="post-title"><a><?php echo esc_html( $the_title ); ?></a></h3>
+					<h3 class="post-title"><?php echo esc_html( $the_title ); ?></h3>
 
 					<div class="modal-body-content"><?php the_content(); ?>
 					
