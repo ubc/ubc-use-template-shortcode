@@ -8,7 +8,7 @@ namespace UBC\Shortcode;
  * Plugin Name:       UBC Use Template Shortcode
  * Plugin URI:        http://ctlt.ubc.ca/
  * Description:       A shortcode to allow you to use a PHP template to output content
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Richard Tape
  * Author URI:        http://blogs.ubc.ca/mbcx9rvt
  * License:           GPL-2.0+
@@ -199,6 +199,8 @@ class Use_Template {
 
 		// Run it through a filter so we can modify outside should someone wish to add
 		$content 	= apply_filters( 'ubc_use_template_content', $content, $data, $department, $template );
+
+		do_action( 'ubc_use_template_end', $content, $data, $department, $template );
 
 		return wp_kses_post( $content );
 
