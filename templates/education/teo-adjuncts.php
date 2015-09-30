@@ -7,6 +7,9 @@
 
 $post_id      = get_the_ID();
 
+//Fetch post title
+$the_title          = get_the_title();
+
 // How to get the post thumbnail
 $post_thumbnail   = wp_get_attachment_url( get_post_thumbnail_id( absint( $post_id ) ) );
 
@@ -44,7 +47,7 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
             
           <a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a>
           
-           <div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><?php $the_title;?></a>
+           <div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><?php echo esc_html ( $the_title );?></a>
 
            </div>
 				
@@ -72,7 +75,7 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
        
          <div class="span12">
 
-         	<h3 class="post-title"><?php $the_title;?></h3>
+         	<h3 class="post-title"><?php echo esc_html ( $the_title ); ?></h3>
         
            <div class="modal-body-content">
 
