@@ -1,5 +1,4 @@
 <?php
-
 /**
  * A template for the Education Programs. This is also an example of how to use
  * and correctly escape content to be output.
@@ -31,9 +30,16 @@
  * use them sparingly - WITH ESCAPING - in the markup
  *
  */
-
 // Fetch the post ID for the currently set up post - we're in the loop
 $post_id 			= get_the_ID();
+//Fetch post title
+
+$the_title          = get_the_title();
+
+//Fetch the content
+
+$the_content          = get_the_content();
+
 
 // Some custom fields
 $location			= get_post_meta( absint( $post_id ), 'location', true );
@@ -54,7 +60,6 @@ $plain_term_slug 	= \UBC\Helpers::get_plain_terms( absint( $post_id ), 'slug', '
 global $usage_id;
 $usage_id++;
 $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
-
 ?>
 
 <div id="<?php echo absint( $post_id ); ?>" class="<?php echo esc_attr( $plain_tags_slug ); ?>">
@@ -66,11 +71,11 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 			<div class="boxey-inner">
 
 				<div class="iso-title">
-					<?php the_title(); ?>
+					<?php echo esc_html( $the_title ); ?>
 				</div>
 
 				<div class="iso-description hidden">
-					<?php the_content(); ?>
+					<?php echo esc_html( $the_content ); ?>
 					<?php echo wp_kses_post( $department ); ?>
 					<?php echo wp_kses_post( $location ); ?>
 				</div>
@@ -88,60 +93,65 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 		</div><!-- .boxey-inside -->
 
+		<a href="#modal_<?php echo absint( $post_id ); ?>" target="_blank" class="fancybox-inline"><span class="link-spanner"></span></a>
+
 		<!-- Start Modal -->
-		<div id="modal_<?php echo absint( $post_id ); ?>" class="modal fade hide container" tabindex="-1">
+		<div style="display:none">
+            
+	        <div id="modal_<?php echo absint( $post_id ); ?>" class="span9 fancystyle">
 
-			<div class="<?php echo esc_attr( $plain_tags_slug ); ?>">
+				<div class="<?php echo esc_attr( $plain_tags_slug ); ?>">
 
-				<div class="modal-header <?php echo esc_attr( $plain_tags_slug ); ?>">
-					<button class="close" type="button" data-dismiss="modal">×</button>
-				</div><!-- .modal-header -->
+					<div class="modal-header <?php echo esc_attr( $plain_tags_slug ); ?>">
+					</div><!-- .modal-header -->
 
-				<div class="modal-body">
+					<div class="modal-body">
 
-					<div class="row-fluid">
+						<div class="row-fluid">
 
-						<div class="span12">
+							<div class="span12">
 
-							<img class="pull-right visible-desktop visible-tablet alignright featured-images-pages" src="<?php echo wp_kses_post( $post_thumbnail ); ?>" alt="" />
-							<h3 class="post-title"><a href="<?php esc_url( $programlink ); ?>"><?php the_title(); ?></a></h3>
+								<img class="pull-right visible-desktop visible-tablet alignright featured-images-pages" src="<?php echo wp_kses_post( $post_thumbnail ); ?>" alt="" />
+								<h3 class="post-title"><a href="<?php esc_url( $programlink ); ?>"><?php echo esc_html( $the_title ); ?></a></h3>
 
-							<div class="modal-body-content">
+								<div class="modal-body-content">
 
-								<div class="modal-location">
-									<?php echo wp_kses_post( $location ); ?>
-								</div>
-
-								<?php the_content(); ?>
-
-								<div class="modal-excerpt">
-									<?php echo wp_kses_post( $department ); ?>
-								</div>
-
-								<div class="modal-icons-set">
-
-									<div class="lefticon">
-										<a href="<?php esc_url( $programlink ); ?>" target="_blank" role="button" class="btn btn-large launch-btn"><i class="icon-th-list"></i> Details</a>
+									<div class="modal-location">
+										<?php echo wp_kses_post( $location ); ?>
 									</div>
 
-									<div class="righticon">
-										<a href="<?php esc_url( $applylink ); ?>" target="_blank" role="button" class="btn btn-large launch-btn"><i class="icon-pencil"></i> How to Apply</a>
+									<?php the_content(); ?>
+
+									<div class="modal-excerpt">
+										<?php echo wp_kses_post( $department ); ?>
+									</div>
+
+									<div class="modal-icons-set">
+
+										<div class="lefticon">
+											<a href="<?php esc_url( $programlink ); ?>" target="_blank" role="button" class="btn btn-large launch-btn"><i class="icon-th-list"></i> Details</a>
+										</div>
+
+										<div class="righticon">
+											<a href="<?php esc_url( $applylink ); ?>" target="_blank" role="button" class="btn btn-large launch-btn"><i class="icon-pencil"></i> How to Apply</a>
+										</div>
+
 									</div>
 
 								</div>
 
 							</div>
 
-						</div>
+						</div><!-- .row-fluid -->
 
-					</div><!-- .row-fluid -->
+					</div><!-- .modal-body -->
 
-				</div><!-- .modal-body -->
+				</div>
 
-			</div>
+			</div><!-- .modal -->
 
-		</div><!-- .modal -->
-
+		</div>
+	
 	</div>
 
 </div>
