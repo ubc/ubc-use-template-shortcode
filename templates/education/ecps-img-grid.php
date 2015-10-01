@@ -41,30 +41,30 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 				<div class="iso-title">
 
 					<a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a></div>
-				
+
 				<div class="iso-description hidden"><?php the_content(); ?></div>
-			
+
 			</div><!-- end .boxey-inner -->
-		
+
 		</div><!-- end .boxey-inside -->
 
 <!-- Start Modal -->
 <div style="display:none;">
-	
+
 	<div id="modal_<?php echo absint( $post_id ); ?>" class="span9">
-		
+
 		<div class="<?php echo esc_attr( $plain_tags_slug ); ?>">
-			
+
 			<div class="modal-body">
-				
+
 				<div class="row-fluid">
-					
+
 					<div class="span12">
-					
+
 					<h3 class="post-title"><?php echo esc_html( $the_title ); ?></h3>
 
 					<div class="modal-body-content"><?php the_content(); ?>
-					
+
 					<a href="<?php echo esc_attr( $programlink ); ?>" target="_blank">Learn More</a>
 
 					</div><!-- end .modal-body-content -->

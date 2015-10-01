@@ -47,34 +47,34 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 			<div class="boxey-inner">
 
 				<a href="#modal_<?php echo absint( $post_id ); ?>" target="_blank" class="fancybox-inline"><span class="iso-title"><?php echo esc_html( $the_title ); ?></span></a>
-				
+
 				<div class="iso-description hidden"><?php echo wp_kses_post( get_the_excerpt() ); ?> <?php echo esc_html( $the_title ); ?> <?php echo esc_html( $coursecodeundergrad); ?> <?php echo esc_html( $coursecodegrad ); ?> <?php echo esc_attr( $plain_term_slug ); ?></div>
 
 				<hr class="iso-separate" />
 
 				<div class="iso-coursecode" data-subtitle="<?php echo esc_attr( $subtitle ); ?>">
-				
+
 					<p align="left"><?php echo esc_html( $coursecodeundergrad ); ?> <span class="gradCC">| <?php echo esc_html( $coursecodegrad ); ?></span></p>
-				
+
 				</div>
 
 				<div class="iso-image">
-				
+
 					<div class="iso-image-mask"><img src="<?php echo esc_url( $promophoto ); ?>" alt="" /></div>
-				
+
 				</div>
 
 				<div class="iso-footer"><i class="icon-pushpin"></i> <small><?php echo esc_html( $location); ?></small>
 				<i class="icon-time"></i> <small><?php echo esc_html( $dates ); ?></small>
 				</div>
-			
+
 			</div><!-- end .boxey-inner -->
 
 		</div><!-- end .boxey-inside -->
 
 	</div><!-- end .boxey entry-content -->
 
-<div style="display:none;">	
+<div style="display:none;">
 
 	<div id="modal_<?php echo absint( $post_id ); ?>" class="span9">
 
@@ -85,15 +85,15 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 		<hr class="modal-separate" />
 
 		<h3 class="modal-cc"><?php echo esc_html( $subtitle); ?></h3>
-		
+
 			<div class="modal-body">
-				
+
 				<div class="row-fluid">
 
 					<div class="span12">
-					
+
 						<div class="modal-body-content">
-							
+
 							<div class="span3">
 
 								<div class="iso-featured-image">
@@ -103,13 +103,13 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 							</div>
 
 							<div class="span9">
-						
+
 								<h3 class="modal-subheader">Program Description</h3>
 								<?php the_excerpt(); ?>
-						
+
 								<h3 class="modal-subheader">Registration Options</h3>
 								Registration is available for <?php echo esc_html( $credit ); ?>.
-						
+
 								<h3 class="modal-subheader">Academic Course Code</h3>
 								<?php echo esc_html( $coursecodeundergrad ); ?> <span class="gradCC">| <?php echo esc_html( $coursecodegrad ); ?></span>
 
@@ -127,7 +127,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 			</div><!-- end .modal-body -->
 
 		</div><!-- end .span9-->
-	
+
 	</div><!-- end display none-->
 
 </div>

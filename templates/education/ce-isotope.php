@@ -28,9 +28,9 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 ?>
 
-<div class="boxey <?php echo esc_attr( $plain_tags_slug ); ?>" data-category="<?php echo esc_attr( $plain_tags_slug ); ?>"><a href="<?php the_permalink(); ?>" class="<?php echo esc_attr( $disable); ?>"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a>
+<div class="boxey <?php echo esc_attr( $plain_tags_slug ); ?>" data-category="<?php echo esc_attr( $plain_tags_slug ); ?>"><a href="<?php the_permalink(); ?>" class="<?php echo esc_attr( $disable ); ?>"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a>
 	<div class="boxeycontent">
-		<div class="boxeytitle"><?php echo esc_html( $projecttitle); ?></div>
+		<div class="boxeytitle"><?php echo esc_html( $projecttitle ); ?></div>
 		<div class="projectinfo">
 			<div class="lead"><?php echo esc_html( $leademail ); ?></div>
 			<div class="dept department"><?php echo esc_attr( $plain_tags_slug ); ?></div>

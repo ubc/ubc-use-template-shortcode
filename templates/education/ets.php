@@ -1,7 +1,7 @@
 <?php
 
 /**
- * A template for Faculty of Education html within Loop or Isotope queries.  
+ * A template for Faculty of Education html within Loop or Isotope queries.
  * This template is specifically for http://ets.educ.ubc.ca/learning-technology-events
  */
 

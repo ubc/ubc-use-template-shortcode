@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template for ECPS Recent Publications http://ecps-educ.sites.olt.ubc.ca/events-media/recent-publications/ 
+ * Template for ECPS Recent Publications http://ecps-educ.sites.olt.ubc.ca/events-media/recent-publications/
 *
  */
 
@@ -29,6 +29,6 @@ $post_thumbnail 	= wp_get_attachment_url( get_post_thumbnail_id( absint( $post_i
 <?php echo esc_html( $author ); ?>  <?php the_content(); ?>
 <div class="published">Published <?php echo esc_html( $publish_date ); ?> by <?php echo esc_html( $publisher ); ?></div>
 </div><div class="span1">
-<div class="pubsicon <?php echo esc_attr( $plain_tags_slug ); ?>"><a href="<?php echo esc_url( $publication_url); ?>" target="_blank"><i class="icon-search"></i></a></div>
+<div class="pubsicon <?php echo esc_attr( $plain_tags_slug ); ?>"><a href="<?php echo esc_url( $publication_url ); ?>" target="_blank"><i class="icon-search"></i></a></div>
 </div>
 <hr />

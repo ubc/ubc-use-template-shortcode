@@ -1,7 +1,7 @@
 <?php
 
 /**
- * A template for TEO Programs Isotope http://teach-educ.sites.olt.ubc.ca/bachelor-of-education-program/secondary/ 
+ * A template for TEO Programs Isotope http://teach-educ.sites.olt.ubc.ca/bachelor-of-education-program/secondary/
  */
 
 // Fetch the post ID for the currently set up post - we're in the loop
@@ -37,38 +37,38 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 	<div class="boxey <?php echo esc_attr( $odd_even ); ?> <?php echo esc_attr( $plain_term_slug ); ?>">
 
 		<a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline">
-		
+
 		<div class="boxey-inside">
-			
+
 			<div class="boxey-inner">
-				
+
 				<h3 class="post-title">
 					<div class="iso-title"><?php echo esc_html( $the_title ); ?></div></h3>
 					<div class="iso-description hidden"><?php echo wp_kses_post( get_the_excerpt() ); ?>  <?php echo esc_attr( $plain_term_slug ); ?> </div>
 
-				</div><!-- end .boxey-inner --> 
-		
+				</div><!-- end .boxey-inner -->
+
 		</div></a><!-- end .boxey-inside -->
 
 	</div><!-- end .boxey-->
 
 <!-- Start Modal -->
 <div style="display:none;">
-    
+
     <div id="modal_<?php echo absint( $post_id ); ?>" class="span9">
-        
+
         <div class="<?php echo esc_attr( $plain_term_slug ); ?>">
 
               <div class="modal-body">
-              	
+
               	<div class="row-fluid">
-                  	
+
                   	<div class="span12">
-                    	
+
                     	<h3 class="post-title"><?php echo esc_html( $the_title ); ?></h3>
-                    	
+
                     	<div class="modal-body-content">
-						
+
 						<div id="sec-subject-entry">
 						<div class="span8"><?php echo esc_html( $subjdesc ); ?></div>
 						<div class="span4">
@@ -80,9 +80,9 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 						</div><!-- End .modal-body-content -->
 
-					</div>  <!-- End span12 -->      
+					</div>  <!-- End span12 -->
 
-				</div><!-- end .row-fluid --> 
+				</div><!-- end .row-fluid -->
 
 			</div><!-- end .modal-body -->
 

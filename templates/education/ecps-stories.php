@@ -41,9 +41,9 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 				<a title="<?php the_title_attribute(); ?>" href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a>
 
 				<div class="iso-title">
-				
+
 				<h4><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><?php echo esc_html( $the_title ); ?></a></h4>
-				
+
 				</div>
 
 			</div><!-- end .boxey-inner -->
@@ -58,7 +58,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 		<div class="<?php echo esc_attr( $plain_tags_slug ); ?>">
 
 			<div class="modal-body">
-				
+
 				<div class="row-fluid">
 
 					<div class="span12">
@@ -66,11 +66,11 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 						<div class="span4">
 
 							<img class="pull-left visible-desktop visible-tablet alignleft featured-images-pages" src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" />
-						
+
 						<h3 class="post-title"><?php echo esc_html( $the_title ); ?></h3>
 
 						<div class="location"><?php echo esc_html( $location ); ?></div>
-						
+
 						</div>
 
 						<div class="span8">
@@ -84,7 +84,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 			</div><!-- end .modal-body -->
 
 		</div><!-- end .plain-tags-slug -->
-	
+
 	</div><!-- End span9-->
 
 </div><!-- End display none -->

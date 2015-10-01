@@ -2,7 +2,7 @@
 
 /**
  * A template for instances of accordion within loop in Education sites. eg. http://ecps-educ.sites.olt.ubc.ca/special-education/sped-courses/
- * needs to be wrapped in the following to work: 
+ * needs to be wrapped in the following to work:
 * <div class="accordion-shortcode accordion courses">[loop query="" ]
 * ADD THIS TEMPLATE
 * [/loop]</div>
@@ -22,7 +22,7 @@ $title 			= get_the_title();
 	</div>
 	<div id="<?php echo absint( $post_id ); ?>" class="accordian-shortcode-content accordion-body collapse">
 		<div class="accordion-inner"><?php the_content(); ?>
-			<strong>Course Link:</strong><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo esc_html( $title ); ?></a>
+			<strong>Course Link:</strong><a href="<?php echo esc_url( get_permalink() ); ?>" target="_blank"><?php echo esc_html( $title ); ?></a>
 		</div>
 	</div>
 </div>
