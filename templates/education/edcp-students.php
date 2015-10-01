@@ -75,7 +75,7 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
     	<div class="modal-header">
 			
-			<h3 id="myModalLabel_<?php echo absint( $post_id ); ?>" class="modal-label header-tags">[the_title] 
+			<h3 id="myModalLabel_<?php echo absint( $post_id ); ?>" class="modal-label header-tags"><?php echo esc_html ( $the_title );?>
 				
 				<small><a href="mailto:<?php echo esc_attr( $email );?>"><?php echo esc_html( $email );?></a></small></h3>
 		</div><!-- end .modal-header -->
