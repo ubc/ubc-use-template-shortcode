@@ -142,7 +142,11 @@ class Use_Template {
 
 	public function add_filters() {
 
+		// Ensure we can have custom data and style tags
 		add_filter( 'wp_kses_allowed_html', array( $this, 'wp_kses_allowed_html__add_data_attributes' ), 10, 2 );
+
+		// Ensure we can have style display: none;
+		add_filter( 'safe_style_css', array( $this, 'safe_style_css__allow_display_none' ) );
 
 	}/* add_filters() */
 
@@ -180,6 +184,25 @@ class Use_Template {
 		return $allowed;
 
 	}/* wp_kses_allowed_html__add_data_attributes() */
+
+
+	/**
+	 * By default WordPress does not allow display: none; in style attributes
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param (array) $safe_tags - Predetermined safe tags
+	 * @return (array) $safe_tags - modified safe tags with display: none allowed
+	 */
+
+	public function safe_style_css__allow_display_none( $safe_tags ) {
+
+		$safe_tags[] = 'display';
+
+		return $safe_tags;
+
+	}/* safe_style_css__allow_display_none() */
+
 
 	/**
 	 * Register the ubc_template shortcode
