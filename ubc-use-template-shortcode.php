@@ -233,30 +233,17 @@ class Use_Template {
 
 	public function add_shortcode__ubc_template( $attr ) {
 
-		$attr = shortcode_atts(
-			array(
-				'department' => '',
-				'template' => '',
-			),
-			$attr,
-			'ubc_template'
-		);
+		$attr = shortcode_atts( array( 'department' => '', 'template' => '' ), $attr, 'ubc_template' );
 
 		// Need both, bail early if not set
 		if ( empty( $attr['department'] ) || empty( $attr['template'] ) ) {
 			return __( 'ubc_template shortcode requires both a department and template', $this->get_text_domain() );
 		}
 
-		// The root URL
-		$path 		= self::$plugin_path . 'templates/';
-
 		$department = sanitize_title_with_dashes( $attr['department'] );
 		$template 	= sanitize_title_with_dashes( $attr['template'] );
 
-		// Form the full path and then check if that template exists
-		$path 		.= trailingslashit( $department ) . $template . '.php';
-
-		$path 		= apply_filters( 'ubc_use_template_path', $path, $department, $template );
+		$path 		= $this->generate_path( $department, $template );
 
 		if ( ! file_exists( $path ) ) {
 			return __( 'Specified template file does not exist', $this->get_text_domain() );
@@ -266,9 +253,7 @@ class Use_Template {
 
 		// This allows us to use odd/even counts in templates
 		global $usage_id;
-		if ( ! isset( $usage_id ) ) {
-			$usage_id = 0;
-		}
+		$usage_id = ( ! isset( $usage_id ) ) ? 0 : $usage_id;
 
 		// Fetch the content of this template
 		$content 	= \UBC\Helpers::fetch_template_part( $path, $data );
@@ -281,6 +266,31 @@ class Use_Template {
 		return wp_kses_post( $content );
 
 	}/* add_shortcode__ubc_template() */
+
+
+	/**
+	 * Formulate the path based on the department and template
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param (string) $department - the department (dir name)
+	 * @param (string) $template - the template name (file name in the dir without .php)
+	 * @return (string) a full file path to include
+	 */
+
+	private function generate_path( $department = '', $template = '' ) {
+
+		// The root URL
+		$path 		= self::$plugin_path . 'templates/';
+
+		// Form the full path and then check if that template exists
+		$path 		.= trailingslashit( $department ) . $template . '.php';
+
+		$path 		= apply_filters( 'ubc_use_template_path', $path, $department, $template );
+
+		return $path;
+
+	}/* generate_path() */
 
 
 	/**
