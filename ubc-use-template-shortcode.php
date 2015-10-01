@@ -8,7 +8,7 @@ namespace UBC\Shortcode;
  * Plugin Name:       UBC Use Template Shortcode
  * Plugin URI:        http://ctlt.ubc.ca/
  * Description:       A shortcode to allow you to use a PHP template to output content
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Richard Tape
  * Author URI:        http://blogs.ubc.ca/mbcx9rvt
  * License:           GPL-2.0+
@@ -103,6 +103,9 @@ class Use_Template {
 		// And the URL
 		self::$plugin_url = trailingslashit( plugins_url( '', __FILE__ ) );
 
+		// Set up our filters
+		$this->add_filters();
+
 		// Set up our actions
 		$this->add_actions();
 
@@ -127,6 +130,56 @@ class Use_Template {
 	}/* add_actions() */
 
 
+
+	/**
+	 * Add our filters
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param null
+	 * @return null
+	 */
+
+	public function add_filters() {
+
+		add_filter( 'wp_kses_allowed_html', array( $this, 'wp_kses_allowed_html__add_data_attributes' ), 10, 2 );
+
+	}/* add_filters() */
+
+
+
+	/**
+	 * Add data-attributes to wp_kses_post
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param (array) $allowed - What tags are allowed
+	 * @param (string) $context - Where are we using wp_kses
+	 * @return (array) Modified tags
+	 */
+
+	public function wp_kses_allowed_html__add_data_attributes( $allowed, $context ) {
+
+		if ( is_array( $context ) ) {
+			return $allowed;
+		}
+
+		if ( 'post' !== $context ) {
+	    	return $allowed;
+		}
+
+		$allowed['a']['data-toggle'] = true;
+		$allowed['a']['data-parent'] = true;
+		$allowed['a']['style'] = true;
+
+		$allowed['button']['data-dismiss'] = true;
+
+		$allowed['div']['data-category'] = true;
+		$allowed['div']['style'] = true;
+
+		return $allowed;
+
+	}/* wp_kses_allowed_html__add_data_attributes() */
 
 	/**
 	 * Register the ubc_template shortcode
@@ -199,6 +252,8 @@ class Use_Template {
 
 		// Run it through a filter so we can modify outside should someone wish to add
 		$content 	= apply_filters( 'ubc_use_template_content', $content, $data, $department, $template );
+
+		do_action( 'ubc_use_template_end', $content, $data, $department, $template );
 
 		return wp_kses_post( $content );
 
