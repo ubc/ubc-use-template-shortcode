@@ -41,7 +41,7 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
     <div class="boxey-inside">
 
-    	<small class="red-tags"><?php echo $plain_term_name ?></small>
+    	<small class="red-tags"><?php echo esc_html( $plain_term_name ) ?></small>
 
     	 <div class="boxey-inner">
             
