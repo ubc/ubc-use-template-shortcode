@@ -28,23 +28,21 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 //Get the Profile Fields 
 $profile_cct  = get_post_meta( $post_id, 'profile_cct',true);
 
-$salutations         = ($profile_cct['name']['salutations']) ;
-$first_name          = ($profile_cct['name']['first']) ;
-$middle_name         = ($profile_cct['name']['middle']) ;
-$last_name           = ($profile_cct['name']['last']) ;
-$position            = ($profile_cct['position']['0']['position']) ;
-$clone_room_number   = ($profile_cct['clone_room_number']['0']['position']) ;
-$research            = ($profile_cct['research']['textarea']) ;
-$clone_name_title_room_phone_email      = ($profile_cct['clone_name_title_room_phone_email']['textarea']) ;
-$phone1              = ($profile_cct['phone']['0']['tel-1']);
-$phone2              = ($profile_cct['phone']['0']['tel-2']);
-$phone3              = ($profile_cct['phone']['0']['tel-3']);
-$email               = ($profile_cct['email']['0']['email']);
-$clone_bio           = ($profile_cct['clone_bio']['textarea']);
-$clone_office        = ($profile_cct['clone_office']['0']['text']);
-$address             = ($profile_cct['address']['textarea']);
-$website             = ($profile_cct['website']['textarea']);
-
+$salutations         = $profile_cct['name']['salutations'] ;
+$first_name          = $profile_cct['name']['first'];
+$middle_name         = $profile_cct['name']['middle'] ;
+$last_name           = $profile_cct['name']['last'] ;
+$position            = $profile_cct['position']['0']['position'] ;
+$clone_room_number   = $profile_cct['clone_room_number']['0']['position'] ;
+$clone_name_title_room_phone_email = $profile_cct['clone_name_title_room_phone_email']['textarea'] ;
+$phone1              = $profile_cct['phone']['0']['tel-1'];
+$phone2              = $profile_cct['phone']['0']['tel-2'];
+$phone3              = $profile_cct['phone']['0']['tel-3'];
+$email               = $profile_cct['email']['0']['email'];
+$clone_bio           = $profile_cct['clone_bio']['textarea'];
+$clone_other_websites = $profile_cct['clone_other_websites']['textarea'];
+$clone_office        = $profile_cct['clone_office']['0']['text'];
+$website             = $profile_cct['website']['textarea'];
 ?>
 
 <div id="<?php echo absint( $post_id ); ?>" class="<?php echo esc_attr( $plain_term_slug ); ?> iso-profile">
@@ -58,21 +56,21 @@ $website             = ($profile_cct['website']['textarea']);
           <div class="iso-featured-image"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a></div>
           
           <h3><div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline">
-            <?php echo esc_html ( $salutations);?> <?php echo esc_html ( $first_name );?> <?php echo ( $middle_name );?> <?php echo ( $last_name );?> 
+            <?php echo esc_html( $salutations );?> <?php echo esc_html( $first_name );?> <?php echo esc_html( $middle_name );?> <?php echo esc_html( $last_name );?> 
           
-          <small><?php echo $position; ?></small></a></div></h3>
+          <small><?php echo esc_html( $position ); ?></small></a></div></h3>
           
           <div class="iso-description hidden">
-            <?php echo esc_html ( $first_name );?> 
-            <?php echo ( $middle_name );?> 
-            <?php echo ( $last_name );?> 
-            <?php echo ( $clone_bio );?>
-            <?php echo ( $bio );?>
-            <?php echo ( $position ); ?>
-            <?php echo ( $$plain_term_name ); ?>
+            <?php echo esc_html( $first_name );?> 
+            <?php echo esc_html( $middle_name );?> 
+            <?php echo esc_html( $last_name );?> 
+            <?php echo esc_html( $clone_bio );?>
+            <?php echo esc_html( $bio );?>
+            <?php echo esc_html( $position ); ?>
+            <?php echo esc_html( $plain_term_name ); ?>
           </div>
 
-          <?php echo ( $clone_room_number );?></br>
+          <?php echo esc_html( $clone_room_number );?></br>
           
           <i class="icon-envelope"></i> <a href="mailto:<?php echo esc_attr( $email );?>"><?php echo esc_html ( $email );?></a></br>
           
@@ -106,7 +104,7 @@ $website             = ($profile_cct['website']['textarea']);
 
               <div class="modal-iso-title">
 
-                <h3> <?php echo esc_html ( $salutations);?> <?php echo esc_html ( $first_name );?>  <?php echo ( $middle_name );?> <?php echo ( $last_name );?> 
+                <h3> <?php echo esc_html ( $salutations );?> <?php echo esc_html ( $first_name );?>  <?php echo esc_html( $middle_name );?> <?php echo esc_html( $last_name );?> 
 
                 <small></small></h3>
 
@@ -120,7 +118,7 @@ $website             = ($profile_cct['website']['textarea']);
                    <i class="icon-phone-sign"></i> <?php echo esc_html( $phone1 );?> <?php echo esc_html( $phone2 );?>-<?php echo esc_html( $phone3 );?>
                   </div>
                   
-                  <div class="modal-postion-description"><?php echo ( $clone_bio );?></div>
+                  <div class="modal-postion-description"><?php echo esc_html ( $clone_bio );?></div>
             
              </div><!-- end .span9--> 
             
