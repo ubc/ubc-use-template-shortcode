@@ -7,6 +7,11 @@
 
 $post_id          = get_the_ID();
 
+$the_content      = get_the_content();
+
+//Fetch post title
+$the_title          = get_the_title();
+
 // How to get the post thumbnail
 $post_thumbnail   = wp_get_attachment_url( get_post_thumbnail_id( absint( $post_id ) ) );
 
@@ -44,7 +49,7 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
           
            <h3>
 
-            <div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><?php $the_title;?></a>
+            <div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><?php echo esc_html ( $the_title );?></a>
 
            </div>
 
@@ -52,7 +57,7 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 				<small><a href="mailto:<?php echo esc_attr( $email );?>"><?php echo esc_html( $email );?></a></small>
 
-				<div class="iso-description hidden"><?php $the_content;?></div>
+				<div class="iso-description hidden"><?php echo esc_html ( $the_content );?></div>
 				
 				<a href="#modal_<?php echo absint( $post_id ); ?>" role="button" class="btn btn-small launch-btn fancybox-inline">Read More</a>          
 
@@ -89,7 +94,7 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
                   
                   <div class="modal-iso-description">
 
-                 <?php $the_content;?>
+                 <?php echo esc_html ( $the_content );?>
 
                   </div>                  
             
