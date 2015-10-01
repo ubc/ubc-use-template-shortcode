@@ -15,7 +15,7 @@ $the_excerpt 		= get_the_excerpt();
 $the_content        = get_the_content();
 $category_list		= get_the_category_list();
 $the_author			= get_the_author();
-
+$plain_term_slug 	= \UBC\Helpers::get_plain_terms( absint( $post_id ), 'slug', ' ' );
 ?>
 
 
@@ -24,7 +24,7 @@ $the_author			= get_the_author();
 		<small class="header-tags"><?php echo wp_kses_post( $category_list ); ?></small>
 
 		<img src="<?php echo esc_url( $post_thumbnail ); ?>" class="img-rounded">
-		<h2><a href="<?php echo esc_url( $the_permalink ); ?>" title="<?php echo esc_html( $the_title ); ?>"> <?php echo esc_html( $the_title ); ?></a></h2>
+		<h2><a href="<?php echo esc_url( $the_permalink ); ?>" title="<?php the_title_attribute(); ?>" data-toggle="modal"> <?php echo esc_html( $the_title ); ?></a></h2>
 		<p class="the_author">
 			<?php echo esc_html( $the_author ); ?><br />
 			<small><?php echo esc_html( $the_date );?></small>
@@ -38,7 +38,7 @@ $the_author			= get_the_author();
 			<div>
 				<div class="modal-header">
 					<button class="close" type="button" data-dismiss="modal">×</button>
-					<h3><a href="<?php echo esc_url( $the_permalink ); ?>#myModalLablel_" title="<?php echo esc_html( $the_title ); ?>" class="modal-label header-tags"><?php echo esc_html( $the_title ); ?></a></h3>
+					<h3><a href="<?php echo esc_url( $the_permalink ); ?>#myModalLablel_" title="<?php the_title_attribute(); ?>" class="modal-label header-tags"><?php echo esc_html( $the_title ); ?></a></h3>
 				</div>
 				<!-- end #modal-header -->
 				<div class="modal-body">
