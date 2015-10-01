@@ -1,7 +1,7 @@
 <?php
 
 //**
- //* A template for TEO Adjuncts.   http://teach.educ.ubc.ca/faculty/adjunct-teaching-professors/
+//* A template for TEO Adjuncts.   http://teach.educ.ubc.ca/faculty/adjunct-teaching-professors/
 
 // Fetch the post ID for the currently set up post - we're in the loop
 
@@ -44,13 +44,13 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
     <div class="boxey-inside">
 
     	 <div class="boxey-inner">
-            
+
           <a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a>
-          
-           <div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><?php echo esc_html ( $the_title );?></a>
+
+           <div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><?php echo esc_html( $the_title );?></a>
 
            </div>
-				
+
 			<a href="#modal_<?php echo absint( $post_id ); ?>" role="button" class="btn btn-small launch-btn fancybox-inline">Read More</a>
 
         </div>
@@ -60,59 +60,59 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
     </div>
 
 <div style="display:none;">
- 
+
   <div id="modal_<?php echo absint( $post_id ); ?>" class="span9">
- 
+
     <div class="<?php echo esc_attr( $plain_term_slug ); ?>">
 
     	<div class="modal-header <?php echo esc_attr( $plain_term_slug ); ?>">
 
     	</div><!-- end .modal-header -->
-  
+
      <div class="modal-body">
-    
+
         <div class="row-fluid">
-       
+
          <div class="span12">
 
-         	<h3 class="post-title"><?php echo esc_html ( $the_title ); ?></h3>
-        
+         	<h3 class="post-title"><?php echo esc_html( $the_title ); ?></h3>
+
            <div class="modal-body-content">
 
            	<div id="adjunct-teacher-entry">
-          
+
             	 <div class="span4"><img class="alignnone img-polaroid" src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></div>
-             
+
             	 <div class="span8">
-                  
-                	 	<strong>Email:</strong> <?php echo esc_html ( $email ) ;?></br>
 
-				        		<strong>Cohort/Teaching Area:</strong> <?php echo esc_html ( $cohort ) ;?></br>
+                	 	<strong>Email:</strong> <?php echo esc_html( $email );?></br>
 
-        						<strong>School District:</strong> <?php echo esc_html ( $schooldistricts ) ;?></br>
+				        		<strong>Cohort/Teaching Area:</strong> <?php echo esc_html( $cohort );?></br>
 
-        						<strong>Teaching interests:</strong> <?php echo esc_html ( $teachinginterests ) ;?></br>
+        						<strong>School District:</strong> <?php echo esc_html( $schooldistricts );?></br>
 
-        						<strong>Interests outside of school:</strong> <?php echo esc_html ( $outsideinterests ) ;?> 
-            
-            	 </div><!-- end .span8--> 
+        						<strong>Teaching interests:</strong> <?php echo esc_html( $teachinginterests );?></br>
+
+        						<strong>Interests outside of school:</strong> <?php echo esc_html( $outsideinterests );?>
+
+            	 </div><!-- end .span8-->
 
             	 <div class="clearfix"></div>
 
-        	 </div> <!-- end .adjunct-teacher-entry--> 
-            
-            </div><!-- end .modal-body-content --> 
-       
-        </div><!-- end .span12 --> 
-      
-      </div><!-- end .row-fluid --> 
-    
+        	 </div> <!-- end .adjunct-teacher-entry-->
+
+            </div><!-- end .modal-body-content -->
+
+        </div><!-- end .span12 -->
+
+      </div><!-- end .row-fluid -->
+
     </div><!-- end .modal-body -->
 
-        <div class="modal-footer"><a href="<?php echo get_permalink(); ?>" target="_blank">open full page <i class="icon-share-alt belize-hole"></i></a>
+        <div class="modal-footer"><a href="<?php echo esc_url( get_permalink() ); ?>" target="_blank">open full page <i class="icon-share-alt belize-hole"></i></a>
 
         </div>
- 
+
   </div><!-- end .plain_term_slug -->
 
 </div><!-- end #modal_theID-->
