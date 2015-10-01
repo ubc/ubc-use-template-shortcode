@@ -83,7 +83,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 							
 							<div id="community-partner-entry">
 								<img class="pull-right alignright" src="<?php echo esc_url( $post_thumbnail ); ?>" />
-								<a href="<?php echo esc_attr( $website ); ?>" target="_blank"><?php echo esc_html( $website ); ?></a><strong>Theme:</strong> <?php echo esc_html( $theme ); ?>
+								<a href="<?php echo esc_url( $website ); ?>" target="_blank"><?php echo esc_html( $website ); ?></a><strong>Theme:</strong> <?php echo esc_html( $theme ); ?>
 
 								<strong>Location(s):</strong> <?php echo esc_html( $location ); ?>
 
