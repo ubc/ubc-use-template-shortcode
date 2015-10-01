@@ -15,7 +15,7 @@ $the_excerpt 		= get_the_excerpt();
 $the_content        = get_the_content();
 $category_list		= get_the_category_list();
 $the_author			= get_the_author();
-
+$plain_term_slug 	= \UBC\Helpers::get_plain_terms( absint( $post_id ), 'slug', ' ' );
 ?>
 
 
@@ -24,7 +24,7 @@ $the_author			= get_the_author();
 		<small class="header-tags"><?php echo wp_kses_post( $category_list ); ?></small>
 
 		<img src="<?php echo esc_url( $post_thumbnail ); ?>" class="img-rounded">
-		<h2><a href="<?php echo esc_url( $the_permalink ); ?>" title="<?php echo esc_html( $the_title ); ?>"> <?php echo esc_html( $the_title ); ?></a></h2>
+		<h2><a href="<?php echo esc_url( $the_permalink ); ?>" title="<?php echo esc_html( $the_title ); ?>" data-toggle="modal"> <?php echo esc_html( $the_title ); ?></a></h2>
 		<p class="the_author">
 			<?php echo esc_html( $the_author ); ?><br />
 			<small><?php echo esc_html( $the_date );?></small>
