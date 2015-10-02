@@ -91,12 +91,6 @@ class Use_Template {
 
 	public function init() {
 
-		if ( ! is_null( self::$instance ) ) {
-			return;
-		}
-
-		self::$instance = new self;
-
 		// Set the plugin path as where this file resides
 		self::$plugin_path = trailingslashit( dirname( __FILE__ ) );
 
