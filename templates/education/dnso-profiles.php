@@ -70,7 +70,7 @@ $clone_office        = ( isset( $profile_cct['clone_office']['0']['text'] ) ) ? 
             <?php if ( false !== $last_name ) : echo esc_html( $last_name ); endif; ?>
             <?php if ( false !== $position ) : echo esc_html( $position ); endif; ?> 
             <?php if ( false !== $clone_name_title_room_phone_email ) : echo esc_html( $clone_name_title_room_phone_email ); endif; ?> 
-            <?php echo esc_html( $$plain_term_name ); ?>
+            <?php echo esc_html( $plain_term_name ); ?>
           </div>
 
           <?php if ( false !== $clone_room_number ) : echo esc_html( $clone_room_number ); endif; ?></br>
