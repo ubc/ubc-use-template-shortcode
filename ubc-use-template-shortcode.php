@@ -276,13 +276,26 @@ class Use_Template {
 	 * @return (string) a full file path to include
 	 */
 
-	private function generate_path( $department = '', $template = '' ) {
+	public function generate_path( $department = '', $template = '' ) {
+
+		if ( ! isset( $department ) || ! isset( $template ) || empty( $department ) || empty( $template ) ) {
+			return '';
+		}
+
+		// Ensure we don't have slashes at the start
+		$department	= ltrim( $department, '/' );
+		$template 	= ltrim( $template, '/' );
+
+		// Ensure the template is just the name, not ends with .php (which, because we use sanitize_title_with_dashes gets translated into -php)
+		if ( $this->ends_with( $template, '-php' ) ) {
+			$template = str_replace( '-php', '', $template );
+		}
 
 		// The root URL
 		$path 		= self::$plugin_path . 'templates/';
 
 		// Form the full path and then check if that template exists
-		$path 		.= trailingslashit( $department ) . $template . '.php';
+		$path 		.= trailingslashit( $department ) . untrailingslashit( $template ) . '.php';
 
 		$path 		= apply_filters( 'ubc_use_template_path', $path, $department, $template );
 
