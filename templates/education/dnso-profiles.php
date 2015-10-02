@@ -76,7 +76,7 @@ $clone_office        = ( isset( $profile_cct['clone_office']['0']['text'] ) ) ? 
 
           <?php if ( false !== $email ) :  echo wp_kses_post( "\n"."<i class='icon-envelope'></i> <a href='mailto:$email'>$email</a>"."\n" ) ;  endif; ?></a></br>
 
-          <i class="icon-phone-sign"></i> <?php if ( false !== $phone1 ) : echo esc_html( $phone1 ); endif; ?> <?php if ( false !== $phone2 ) : echo esc_html( $phone2 ); endif; ?> <?php if ( false !== $phone3 ) : echo esc_html( $phone3 ); endif; ?></br>
+          <?php if ( false !== $phone1 ) : echo wp_kses_post( "<i class='icon-phone-sign'></i>"." (".$phone1.") ".$phone2."-".$phone3 ); endif; ?></br>
 
           <a href="#modal_<?php echo absint( $post_id ); ?>" role="button" class="btn btn-small launch-btn fancybox-inline">See More</a>
 
@@ -118,7 +118,7 @@ $clone_office        = ( isset( $profile_cct['clone_office']['0']['text'] ) ) ? 
 
                        <?php if ( false !== $email ) :  echo wp_kses_post( "\n"."<i class='icon-envelope'></i> <a href='mailto:$email'>$email</a>"."\n" ) ;  endif; ?></a></br>
  
-                       <i class="icon-phone-sign"></i> <?php if ( false !== $phone1 ) : echo esc_html( $phone1 ); endif; ?> <?php if ( false !== $phone2 ) : echo esc_html( $phone2 ); endif; ?> <?php if ( false !== $phone3 ) : echo esc_html( $phone3 ); endif; ?>
+                       <?php if ( false !== $phone1 ) : echo wp_kses_post( "<i class='icon-phone-sign'></i>"." (".$phone1.") ".$phone2."-".$phone3 ); endif; ?></br>
 
                     </div>
 
