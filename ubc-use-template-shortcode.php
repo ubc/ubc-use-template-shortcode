@@ -323,6 +323,42 @@ class Use_Template {
 
 	}/* get_text_domain() */
 
+
+	/**
+	 * Check if a string starts with another string
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param (string) $haystack  - The string which we're looking at
+	 * @param (string) $needle  - The string which we're testing if $haystack starts with
+	 * @return (bool)
+	 */
+
+	protected function starts_with( $haystack, $needle ) {
+
+		// search backwards starting from haystack length characters from the end
+		return '' === $needle || false !== strrpos( $haystack, $needle, -strlen( $haystack ) );
+
+	}/* starts_with() */
+
+
+	/**
+	 * Tests if a string ends with another string
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param (string) $haystack  - The string which we're looking at
+	 * @param (string) $needle  - The string which we're testing if $haystack ends with
+	 * @return (bool)
+	 */
+
+	protected function ends_with( $haystack, $needle ) {
+
+		// search forward starting from end minus needle length characters
+		return '' === $needle || ( ( $temp = strlen( $haystack ) - strlen( $needle ) ) >= 0 && strpos( $haystack, $needle, $temp ) !== false );
+
+	}/* ends_with() */
+
 }/* Class Use_Template */
 
 
