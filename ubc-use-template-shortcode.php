@@ -235,7 +235,7 @@ class Use_Template {
 
 		// Need both, bail early if not set
 		if ( empty( $attr['department'] ) || empty( $attr['template'] ) ) {
-			return __( 'ubc_template shortcode requires both a department and template', $this->get_text_domain() );
+			return esc_html__( 'ubc_template shortcode requires both a department and template', $this->get_text_domain() );
 		}
 
 		$department = sanitize_title_with_dashes( $attr['department'] );
@@ -244,7 +244,7 @@ class Use_Template {
 		$path 		= $this->generate_path( $department, $template );
 
 		if ( ! file_exists( $path ) ) {
-			return __( 'Specified template file does not exist', $this->get_text_domain() );
+			return esc_html__( 'Specified template file does not exist', $this->get_text_domain() );
 		}
 
 		$data 		= apply_filters( 'ubc_use_template_data', array(), $department, $template );
