@@ -78,9 +78,13 @@ $website                           = ( isset( $profile_cct['website']['textarea'
 
           <?php if ( false !== $clone_room_number ) : echo esc_html( $clone_room_number ); endif; ?></br>
 
-          <?php if ( false !== $email ) :  echo wp_kses_post( "\n"."<i class='icon-envelope'></i> <a href='mailto:$email'>$email</a>"."\n" ) ;  endif; ?></a></br>
+          <?php if ( false !== $email ) :  ?>
+          <i class="icon-envelope"></i> <?php echo "<a href='mailto:" . esc_html( $email ) . "'>" . esc_html( $email ) . "</a>" ?>
+          <?php endif; ?> </br>
 
-          <?php if ( false !== $phone1 ) : echo wp_kses_post( "<i class='icon-phone-sign'></i>"." (".$phone1.") ".$phone2."-".$phone3 ); endif; ?></br>
+          <?php if ( false !== $phone1 ) :  ?>
+           <i class='icon-phone-sign'></i> <?php echo esc_html( $phone1 ) . " " . esc_html( $phone2 ) . "-" . esc_html( $phone3 ); ?>
+          <?php endif; ?>  </br>
 
           <a href="#modal_<?php echo absint( $post_id ); ?>" role="button" class="btn btn-small launch-btn fancybox-inline">Show More</a>
 
@@ -130,9 +134,13 @@ $website                           = ( isset( $profile_cct['website']['textarea'
  
                     <div class="modal-iso-description">
 
-                       <?php if ( false !== $email ) :  echo wp_kses_post( "\n"."<i class='icon-envelope'></i> <a href='mailto:$email'>$email</a>"."\n" ) ;  endif; ?></a></br>
- 
-                       <?php if ( false !== $phone1 ) : echo wp_kses_post( "<i class='icon-phone-sign'></i>"." (".$phone1.") ".$phone2."-".$phone3 ); endif; ?>
+          <?php if ( false !== $email ) :  ?>
+          <i class="icon-envelope"></i> <?php echo "<a href='mailto:" . esc_html( $email ) . "'>" . esc_html( $email ) . "</a>" ?>
+          <?php endif; ?> </br>
+
+          <?php if ( false !== $phone1 ) :  ?>
+           <i class='icon-phone-sign'></i> <?php echo esc_html( $phone1 ) . " " . esc_html( $phone2 ) . "-" . esc_html( $phone3 ); ?>
+          <?php endif; ?>  </br>
 
                        <div id="modaloffice"><?php if ( false !== $clone_office ) : echo esc_html( $clone_office ); endif; ?></div>
 
