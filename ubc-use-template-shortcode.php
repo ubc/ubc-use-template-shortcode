@@ -209,6 +209,10 @@ class Use_Template {
 
 	public function init__add_shortcode() {
 
+		if ( shortcode_exists( 'ubc_template' ) ) {
+			return;
+		}
+
 		add_shortcode( 'ubc_template', array( $this, 'add_shortcode__ubc_template' ) );
 
 	}/* init__add_shortcode() */
