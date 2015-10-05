@@ -75,7 +75,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 						<img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" class="alignnone img-polaroid" />
 						</div>
 						<div class="clearfix">&nbsp;</div>
-						<?php echo esc_html( $quote); ?>
+						<?php echo wp_kses_post( $quote ); ?>
 						</div><!-- End sec-subject-entry -->
 
 						</div><!-- End .modal-body-content -->
