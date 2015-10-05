@@ -41,7 +41,7 @@ $bio = ( isset( $profile_cct['bio']['textarea'] ) ) ? $profile_cct['bio']['texta
 
           if ( false !== $first_name ) : 
 
-            echo esc_html( $first_name ).' '; // Show first name if set
+            echo '<span class="first">'. esc_html( $first_name ).' </span>'; // Show first name if set
 
           endif; 
 
@@ -53,7 +53,7 @@ $bio = ( isset( $profile_cct['bio']['textarea'] ) ) ? $profile_cct['bio']['texta
 
           if ( false !== $last_name ) : 
 
-            echo esc_html( $last_name ); // Show last name if set
+            echo '<span class="last">'. esc_html( $last_name ).'</span>'; // Show last name if set
 
           endif; 
 
