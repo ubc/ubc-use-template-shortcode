@@ -97,8 +97,6 @@ $bio = ( isset( $profile_cct['bio']['textarea'] ) ) ? $profile_cct['bio']['texta
 
           echo wp_kses_post( do_shortcode( '[profilefield type=bio]' ) );
 
-          //echo wp_kses_post( apply_filters( 'the_content', $bio ) );
-
         endif;
 
         ?>
