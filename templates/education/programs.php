@@ -112,7 +112,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 							<div class="span12">
 
 								<img class="pull-right visible-desktop visible-tablet alignright featured-images-pages" src="<?php echo wp_kses_post( $post_thumbnail ); ?>" alt="" />
-								<h3 class="post-title"><a href="<?php esc_url( $programlink ); ?>"><?php echo esc_html( $the_title ); ?></a></h3>
+								<h3 class="post-title"><a href="<?php echo esc_url( $programlink ); ?>"><?php echo esc_html( $the_title ); ?></a></h3>
 
 								<div class="modal-body-content">
 
@@ -129,11 +129,11 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 									<div class="modal-icons-set">
 
 										<div class="lefticon">
-											<a href="<?php esc_url( $programlink ); ?>" target="_blank" role="button" class="btn btn-large launch-btn"><i class="icon-th-list"></i> Details</a>
+											<a href="<?php echo esc_url( $programlink ); ?>" target="_blank" role="button" class="btn btn-large launch-btn"><i class="icon-th-list"></i> Details</a>
 										</div>
 
 										<div class="righticon">
-											<a href="<?php esc_url( $applylink ); ?>" target="_blank" role="button" class="btn btn-large launch-btn"><i class="icon-pencil"></i> How to Apply</a>
+											<a href="<?php echo esc_url( $applylink ); ?>" target="_blank" role="button" class="btn btn-large launch-btn"><i class="icon-pencil"></i> How to Apply</a>
 										</div>
 
 									</div>
