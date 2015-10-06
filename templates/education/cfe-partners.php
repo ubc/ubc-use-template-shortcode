@@ -6,20 +6,21 @@
  */
 
 // Fetch the post ID for the currently set up post - we're in the loop
-$post_id 			= get_the_ID();
+$post_id 	    = get_the_ID();
 
 //Fetch post title
 
 $the_title          = get_the_title();
 
 // Some custom fields
-$location			= get_post_meta( absint( $post_id ), 'location', true );
-$description		= get_post_meta( absint( $post_id ), 'description', true );
-$session 	    	= get_post_meta( absint( $post_id ), 'session', true );
-$website            = get_post_meta( absint( $post_id ), 'website', true );
-$theme              = get_post_meta( absint( $post_id ), 'theme', true );
-$address            = get_post_meta( absint( $post_id ), 'physical_address', true );
-$age                = get_post_meta( absint( $post_id ), 'age_group', true );
+$location	    = get_post_meta( absint( $post_id ), 'Location', true );
+$description	    = get_post_meta( absint( $post_id ), 'Description', true );
+$session_secondary  = get_post_meta( absint( $post_id ), 'Session_Secondary', true );
+$session_elementary = get_post_meta( absint( $post_id ), 'Session_Elementary', true );
+$website            = get_post_meta( absint( $post_id ), 'Website', true );
+$theme              = get_post_meta( absint( $post_id ), 'Theme', true );
+$address            = get_post_meta( absint( $post_id ), 'Physical Address', true );
+$age                = get_post_meta( absint( $post_id ), 'Age Group', true );
 
 // How to get the post thumbnail
 $post_thumbnail 	= wp_get_attachment_url( get_post_thumbnail_id( absint( $post_id ) ) );
@@ -67,41 +68,45 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 <div style="display:none;"> 
 
 	<div id="modal_<?php echo absint( $post_id ); ?>" class="span9 fancystyle">
-           
+
        	<div class="<?php echo esc_attr( $plain_term_slug ); ?>">
-              	
+  	
             <div class="modal-header <?php echo esc_attr( $plain_term_slug ); ?>">
             </div><!-- end #modal-header -->
-              
+   
             <div class="modal-body">
-              	
+	
               	<div class="row-fluid">
-                 
+
                   	<div class="span12">
-                   
+
                     	<div class="modal-body-content">
-							
+	
 							<div id="community-partner-entry">
-								<img class="pull-right alignright" src="<?php echo esc_url( $post_thumbnail ); ?>" />
-								<a href="<?php echo esc_url( $website ); ?>" target="_blank"><?php echo esc_html( $website ); ?></a><strong>Theme:</strong> <?php echo esc_html( $theme ); ?>
+	
+								<img class="pull-right alignright" src="<?php echo esc_url( $post_thumbnail ); ?>" /></br>
+	
+								<div class="website"><a href="<?php echo esc_url( $website ); ?>" target="_blank"><?php echo esc_html( $website ); ?></a></div>
 
-								<strong>Location(s):</strong> <?php echo esc_html( $location ); ?>
+								<div class="theme"><strong>Theme:</strong> <?php echo esc_html( $theme ); ?></div>
 
-								<strong>Session(s):</strong> <?php echo esc_html( $sessions ); ?>
+								<div class="location"><strong>Location(s):</strong> <?php echo esc_html( $location ); ?></div>
 
-								<strong>Description:</strong>
-								<?php echo esc_html( $description ); ?>
+								<div class="session"><strong>Session(s):</strong> <?php echo esc_html( $session_secondary ); ?><?php echo esc_html( $session_elementary ); ?></div>
+
+								<div class="description"><strong>Description:</strong></br>
+								<?php echo wp_kses_post( $description ); ?></div>
 
 								<a href="<?php echo get_permalink(); ?>" target="_blank">open full page <i class="icon-share-alt belize-hole"></i></a>
 
 							</div><!-- end .community partner entry-->
 
 						</div><!-- end .modal-body-content -->
-                  
+
                  	 </div>   <!-- end .span12 -->          
-               
+   
                 </div> <!-- end .row-fluid --> 
-               
+   
             </div>  <!-- end .modal-body -->
 
 		</div> <!-- End .plain terms slug-->
