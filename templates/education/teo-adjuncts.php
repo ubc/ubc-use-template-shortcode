@@ -89,7 +89,7 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
 				<strong>Cohort/Teaching Area:</strong> <?php echo wp_kses_post( $cohort );?></br>
 
-        			<strong>School District:</strong> <?php echo wp_kses_post( $schooldistricts );?></br>
+        			<strong>School District:</strong> <?php echo wp_kses_post( $schooldistrict );?></br>
 
         			<strong>Teaching interests:</strong> <?php echo wp_kses_post( $teachinginterests );?></br>
 
