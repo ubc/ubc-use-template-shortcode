@@ -70,7 +70,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
                     	<div class="modal-body-content">
 
 						<div id="sec-subject-entry">
-						<div class="span8"><?php echo esc_html( $subjdesc ); ?></div>
+						<div class="span8"><?php echo wp_kses_post( $subjdesc ); ?></div>
 						<div class="span4">
 						<img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" class="alignnone img-polaroid" />
 						</div>
