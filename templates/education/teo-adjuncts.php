@@ -85,15 +85,15 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
             	 <div class="span8">
 
-                	 	<strong>Email:</strong> <?php echo esc_html( $email );?></br>
+                	 	<strong>Email:</strong> <?php echo wp_kses_post( $email );?></br>
 
-				        		<strong>Cohort/Teaching Area:</strong> <?php echo esc_html( $cohort );?></br>
+				<strong>Cohort/Teaching Area:</strong> <?php echo wp_kses_post( $cohort );?></br>
 
-        						<strong>School District:</strong> <?php echo esc_html( $schooldistricts );?></br>
+        			<strong>School District:</strong> <?php echo wp_kses_post( $schooldistricts );?></br>
 
-        						<strong>Teaching interests:</strong> <?php echo esc_html( $teachinginterests );?></br>
+        			<strong>Teaching interests:</strong> <?php echo wp_kses_post( $teachinginterests );?></br>
 
-        						<strong>Interests outside of school:</strong> <?php echo esc_html( $outsideinterests );?>
+        			<strong>Interests outside of school:</strong> <?php echo wp_kses_post( $outsideinterests );?>
 
             	 </div><!-- end .span8-->
 
