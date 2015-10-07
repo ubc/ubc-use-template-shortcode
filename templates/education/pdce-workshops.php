@@ -114,7 +114,7 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 								<?php echo esc_html( $coursecodeundergrad ); ?> <span class="gradCC">| <?php echo esc_html( $coursecodegrad ); ?></span>
 
 								<h3 class="modal-subheader">More Information</h3>
-								For more information, please visit <?php echo esc_html( $vanityurl ); ?>.
+								For more information, please visit <?php echo wp_kses_post( $vanityurl ); ?>.
 
 							</div>
 
