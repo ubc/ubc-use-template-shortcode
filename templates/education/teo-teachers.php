@@ -82,7 +82,7 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
              
             	 <div class="span8">
                   
-                	 <?php echo esc_html( $body ); ?>
+                	 <?php echo wp_kses_post( $body ); ?>
             
             	 </div><!-- end .span8--> 
 
