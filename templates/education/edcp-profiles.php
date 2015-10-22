@@ -24,7 +24,7 @@ global $usage_id;
 $usage_id++;
 $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
-//Get the Profile Fields 
+//Get the Profile Fields
 $profile_cct  = get_post_meta( $post_id, 'profile_cct', true);
 
 $salutations         = ( isset( $profile_cct['name']['salutations'] ) ) ? $profile_cct['name']['salutations']: false;
@@ -48,23 +48,23 @@ $website             = ( isset( $profile_cct['website']['textarea'] ) ) ? $profi
     <div class="boxey-inside">
 
         <div class="boxey-inner">
-   
+
           <div class="iso-featured-image"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a></div>
 
           <h3><div class="iso-title">
 
             <a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline">
-            <?php if ( false !== $salutations ) : echo esc_html( $salutations ); endif; ?> <?php if ( false !== $first_name ) : echo esc_html( $first_name ); endif; ?> <?php if ( false !== $last_name ) : echo esc_html( $last_name ); endif; ?>          
+            <?php if ( false !== $salutations ) : echo esc_html( $salutations ); endif; ?> <?php if ( false !== $first_name ) : echo esc_html( $first_name ); endif; ?> <?php if ( false !== $last_name ) : echo esc_html( $last_name ); endif; ?>
             </a>
 
           </div></h3>
 
           <div class="iso-description hidden">
-            <?php if ( false !== $first_name ) : echo esc_html( $first_name ); endif; ?> 
-            <?php if ( false !== $middle ) : echo esc_html( $middle ); endif; ?> 
+            <?php if ( false !== $first_name ) : echo esc_html( $first_name ); endif; ?>
+            <?php if ( false !== $middle ) : echo esc_html( $middle ); endif; ?>
             <?php if ( false !== $last_name ) : echo esc_html( $last_name ); endif; ?>
-            <?php if ( false !== $research_interests ) : echo esc_html( $research_interests ); endif; ?> 
-            <?php if ( false !== $bio ) : echo esc_html( $bio ); endif; ?> 
+            <?php if ( false !== $research_interests ) : echo esc_html( $research_interests ); endif; ?>
+            <?php if ( false !== $bio ) : echo esc_html( $bio ); endif; ?>
             <?php echo esc_html( $plain_term_name ); ?>
           </div>
 
@@ -107,13 +107,13 @@ $website             = ( isset( $profile_cct['website']['textarea'] ) ) ? $profi
                     <div class="modal-iso-title">
 
                        <h3>
-                       <?php if ( false !== $salutations ) : echo esc_html( $salutations ); endif; ?> <?php if ( false !== $first_name ) : echo esc_html( $first_name ); endif; ?> <?php if ( false !== $middle ) : echo esc_html( $middle ); endif; ?> <?php if ( false !== $last_name ) : echo esc_html( $last_name ); endif; ?>          
+                       <?php if ( false !== $salutations ) : echo esc_html( $salutations ); endif; ?> <?php if ( false !== $first_name ) : echo esc_html( $first_name ); endif; ?> <?php if ( false !== $middle ) : echo esc_html( $middle ); endif; ?> <?php if ( false !== $last_name ) : echo esc_html( $last_name ); endif; ?>
                        </h3>
 
                     </div>
 
                      <?php if ( false !== $research_interests ) : echo esc_html( $research_interests ); endif; ?>
- 
+
                     <div class="modal-iso-description">
 
                       <?php if ( false !== $email ) :  ?>
@@ -130,16 +130,18 @@ $website             = ( isset( $profile_cct['website']['textarea'] ) ) ? $profi
 
                     </div>
 
-                    <div class="modal-postion-description"><?php if ( false !== $bio ) : echo esc_html( $bio ); endif; ?></br>
-                      <?php echo esc_html( $plain_term_name );?></div>
+                    <div class="modal-postion-description"><?php if ( false !== $bio ) :
+                      echo wp_kses_post( do_shortcode( '[profilefield type=bio]' ) );
+                    endif; ?>
+                      </div>
 
-                </div><!-- end .span9--> 
+                </div><!-- end .span9-->
 
-              </div><!-- end .modal-body-content--> 
+              </div><!-- end .modal-body-content-->
 
-            </div><!-- end .span12 --> 
+            </div><!-- end .span12 -->
 
-          </div><!-- end .row-fluid --> 
+          </div><!-- end .row-fluid -->
 
         </div><!-- end .modal-body -->
 
