@@ -34,19 +34,19 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 	<div class="boxey <?php echo esc_attr( $odd_even ); ?> <?php echo esc_attr( $plain_term_slug ); ?> boxISO <?php echo esc_html( $session_type ); ?>">
 
 		<div class="boxey-inside">
-        
+
 			<?php echo esc_attr( $plain_term_slug ); ?> <span class="sessionType"><?php echo esc_html( $session_type ); ?></span>
-				
+
                 <div class="boxey-inner">
-                
+
 					<h3 class="boxTitle"><span class="iso-title"><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" target="_blank"><?php echo esc_html( $the_title ); ?></a></span></h3>
-                    
+
 					<div class="iso-description"><?php echo wp_kses_post( get_the_excerpt() ); ?> <span class="iso-title hidden"><?php echo esc_html( $the_title ); ?></span></div>
-				
+
 				</div>
-                
+
 		</div>
-            
+
 	</div>
-        
+
 </div>

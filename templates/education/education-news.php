@@ -41,7 +41,7 @@ $plain_term_slug 	= \UBC\Helpers::get_plain_terms( absint( $post_id ), 'slug', '
 
 
 
-// Replacement for [odd-even] 
+// Replacement for [odd-even]
 global $usage_id;
 $usage_id++;
 $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
@@ -54,65 +54,65 @@ $odd_even 			= ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 		<div class="boxey-inside">
 
 			<div class="boxey-inner">
-				
+
 				<small class="modal-tags header-tags"><?php echo esc_html( $plain_tags_slug ); ?></small>
 
 				<a href="#modal_<?php echo absint( $post_id ); ?>" target="_blank" title="<?php the_title_attribute(); ?>" class="fancybox-inline"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a>
-				
+
 				<h3 class="post-title">
 
 				<div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" target="_blank" title="<?php the_title_attribute(); ?>" class="fancybox-inline"><?php the_title(); ?></a>
 
 				</div>
 
-				</h3>	
+				</h3>
 
-				<div class="iso-description hidden"><?php echo wp_kses_post( get_the_excerpt() ); ?> 
+				<div class="iso-description hidden"><?php echo wp_kses_post( get_the_excerpt() ); ?>
 					<?php the_content(); ?></div>
 
-				<div class="boxey-excerpt"><?php echo wp_kses_post( get_the_excerpt() ); ?></div>					
-		
+				<div class="boxey-excerpt"><?php echo wp_kses_post( get_the_excerpt() ); ?></div>
+
 			</div><!-- end .boxey-inner -->
 
 		</div> <!-- end .boxey-inside -->
 
 <!-- Start fancybox popup -->
 <div style="display:none;">
-        
+
         <div id="modal_<?php echo absint( $post_id ); ?>" class="span9 fancystyle">
-           
+
             <div class="<?php echo esc_attr( $plain_term_slug ); ?>">
-              	
+
               	<div class="modal-header <?php echo esc_attr( $plain_term_slug ); ?>">
-              
+
               	</div><!-- end #modal-header -->
-              
+
               <div class="modal-body">
-              	
+
               	<div class="row-fluid">
-                 
+
                   <div class="span12">
-                   
+
                     <h3 class="post-title"><?php echo esc_html( $the_title ); ?></h3>
-                    
+
                     <div class="modal-body-content">
 					          <?php the_content(); ?>
-				          	</div> 
-                  
-                  </div>   <!-- end .span12 -->          
-               
-                </div> <!-- end .row-fluid --> 
-               
+				          	</div>
+
+                  </div>   <!-- end .span12 -->
+
+                </div> <!-- end .row-fluid -->
+
               </div>  <!-- end .modal-body -->
-             
+
           	<div class="modal-footer">
-       
+
         		<a href="<?php echo get_permalink(); ?>" target="_blank">open full page <i class="icon-share-alt belize-hole"></i></a> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-           
+
          	</div>  <!-- End .modal-footer -->
 
 		</div> <!-- End .plain terms slug-->
-        
+
     </div><!-- End .span9 -->
 
 </div><!-- End display none -->
