@@ -25,6 +25,6 @@ for ( $i=0; $i<count( $category ); $i++) {
 
 	<div class="boxey <?php echo esc_attr( $plain_cat_slug ); ?> boxStyle <?php echo esc_attr( $session_type ); ?> ">
 		<p><?php echo esc_html( $plain_cat_slug ); ?> <span class="sessionType"><?php echo esc_html( $session_type ); ?></span></p>
-		<h3 class="boxTitle"><a title="<?php echo esc_attr( the_title_attribute() ); ?>" href="<?php echo esc_url( the_permalink()); ?>" target="_blank"><?php esc_html( the_title() ); ?></h3>
+		<h3 class="boxTitle"><a title="<?php echo esc_attr( the_title_attribute() ); ?>" href="<?php echo esc_url( the_permalink()); ?>" target="_blank"><?php esc_html( the_title() ); ?></a></h3>
 		<p class="boxContent"><?php echo esc_html( the_excerpt() ); ?></p>
 	</div>
