@@ -8,12 +8,10 @@
 $post_id 			= get_the_ID();
 
 //Fetch post title
-
 $the_title          = get_the_title();
 
 //Get the post permalink
-
-$permalink          = get_permalink( $post );
+$permalink          = get_permalink( absint( $post_id) );
 
 // Some custom fields
 $coursecodeundergrad			= get_post_meta( absint( $post_id ), 'CourseCodeUndergrad', true );
