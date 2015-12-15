@@ -6,7 +6,7 @@
 
 // Fetch the post ID for the currently set up post - we're in the loop
 $post_id 			= get_the_ID();
-$post_id            = $post_id;
+$post_id            = absint( $post_id );
 
 //Fetch post title
 $the_title          = get_the_title();
@@ -56,7 +56,7 @@ switch ( $deliverymode ){
 
 ?>
 
-<div id="<?php echo $post_id; ?>" class="<?php echo esc_attr( $plain_term_slug ); ?> iso-box">
+<div id="<?php echo esc_attr( $post_id ); ?>" class="<?php echo esc_attr( $plain_term_slug ); ?> iso-box">
 
 	<div class="boxey entry-content  <?php echo esc_attr( $odd_even ); ?> <?php echo esc_attr( $plain_term_slug ); ?> iso-style">
 
