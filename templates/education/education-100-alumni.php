@@ -27,9 +27,11 @@ $bio = ( isset( $profile_cct['bio']['textarea'] ) ) ? $profile_cct['bio']['texta
 	<?php endif; ?>
 
 	<header>
-		<h2><a class="fancybox-inline name" href="#<?php echo absint( $post_id ); ?>"><?php if ( false !== $salutations ) :
+		<h2><a class="fancybox-inline name" href="#<?php echo absint( $post_id ); ?>">
 
-			echo esc_html( $salutations ).' ';// Show salutations if set
+<?php if ( false !== $salutations ) :
+
+	echo '<span class="salutations>'.esc_html( $salutations ).' </span>';// Show salutations if set
 
 endif;
 
@@ -41,7 +43,7 @@ endif;
 
 if ( false !== $middle_name ) :
 
-	echo esc_html( $middle_name ).' '; // Show middle name if set
+	echo '<span class="middle">'.esc_html( $middle_name ).' </span>'; // Show middle name if set
 
 endif;
 
@@ -53,11 +55,11 @@ endif;
 
 if ( false !== $credentials ) :
 
-	echo ', '. esc_html( $credentials ); // Show creditials if set
+	echo '<span class="credentials">, '. esc_html( $credentials ).'</span>'; // Show creditials if set
 
 endif; ?>
 
-</a></h2>
+		</a></h2>
 	</header>
 </div><!-- end .grid-item -->
 
@@ -65,38 +67,39 @@ endif; ?>
 	<div class="span9" id="<?php echo absint( $post_id ); ?>">
 		<div class="row-fluid">
 			<div class="span8 profile-modal">
-				<h2><?php if ( false !== $salutations ) :
+				<h2>
 
-					echo esc_html( $salutations ).' ';// Show salutations if set
+<?php if ( false !== $salutations ) :
+
+	echo '<span class="salutations>'.esc_html( $salutations ).' </span>';// Show salutations if set
 
 endif;
 
 if ( false !== $first_name ) :
 
-	echo esc_html( $first_name ).' '; // Show first name if set
+	echo '<span class="first">'. esc_html( $first_name ).' </span>'; // Show first name if set
 
 endif;
 
 if ( false !== $middle_name ) :
 
-	echo esc_html( $middle_name ).' '; // Show middle name if set
+	echo '<span class="middle">'.esc_html( $middle_name ).' </span>'; // Show middle name if set
 
 endif;
 
 if ( false !== $last_name ) :
 
-	echo esc_html( $last_name ); // Show last name if set
+	echo '<span class="last">'. esc_html( $last_name ).'</span>'; // Show last name if set
 
 endif;
 
 if ( false !== $credentials ) :
 
-	echo ', '. esc_html( $credentials ); // Show creditials if set
+	echo '<span class="credentials">, '. esc_html( $credentials ).'</span>'; // Show creditials if set
 
 endif; ?>
 
-
-</h2>
+				</h2>
 <p><?php if ( false !== $bio ) :
 
 	echo wp_kses_post( do_shortcode( '[profilefield type=bio]' ) );
