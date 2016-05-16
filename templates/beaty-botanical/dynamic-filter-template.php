@@ -5,7 +5,6 @@ $post_id 			= get_the_ID();
 $the_permalink 		= get_the_permalink();
 $get_the_title 		= get_the_title();
 $get_the_excerpt	= get_the_excerpt();
-$post_thumbnail 	= the_post_thumbnail( 'large' );
 
 // Fetch category and tags.
 $plain_tags_slug 	= \UBC\Helpers::get_plain_tags( absint( $post_id ), 'slug', ' ' );
@@ -21,7 +20,7 @@ $plain_term_slug 	= \UBC\Helpers::get_plain_terms( absint( $post_id ), 'slug', '
 		<div class="img-container">
 
 			<a target="_self" href="<?php echo esc_url( $the_permalink ); ?>" title="<?php echo esc_attr( $get_the_title ); ?>">
-				<?php esc_html( $post_thumbnail ); ?>
+				<?php the_post_thumbnail( 'large' ); ?>
 			</a>
 
 		</div><!-- end .img-container -->
