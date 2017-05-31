@@ -49,11 +49,11 @@ $website             = ( isset( $profile_cct['website']['textarea'] ) ) ? $profi
 
         <div class="boxey-inner">
 
-          <div class="iso-featured-image"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a></div>
+          <div class="iso-featured-image"><a href="<?php echo absint( $post_id ); ?>"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a></div>
 
           <h3><div class="iso-title">
 
-            <a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline">
+            <a href="<?php echo absint( $post_id ); ?>">
             <?php if ( false !== $salutations ) : echo esc_html( $salutations ); endif; ?> <?php if ( false !== $first_name ) : echo esc_html( $first_name ); endif; ?> <?php if ( false !== $last_name ) : echo esc_html( $last_name ); endif; ?>
             </a>
 
@@ -76,7 +76,7 @@ $website             = ( isset( $profile_cct['website']['textarea'] ) ) ? $profi
            <i class='icon-phone-sign'></i> <?php echo esc_html( $phone1 ) . " " . esc_html( $phone2 ) . "-" . esc_html( $phone3 ); ?>
           <?php endif; ?>  </br>
 
-          <a href="#modal_<?php echo absint( $post_id ); ?>" role="button" class="btn btn-small launch-btn fancybox-inline">Read Profile</a>
+          <a href="<?php echo absint( $post_id ); ?>" role="button" class="btn btn-small launch-btn">Read Profile</a>
 
         </div>
 
