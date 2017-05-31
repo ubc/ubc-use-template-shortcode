@@ -41,12 +41,13 @@ $odd_even       = ( 0 === $usage_id % 2 ) ? 'even' : 'odd';
 
     <div class="boxey-inside">
 
-    	<small class="red-tags"><?php echo esc_html( $plain_term_name ) ?></small>
 
     	 <div class="boxey-inner">
             
           <div class="iso-featured-image"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><img src="<?php echo esc_url( $post_thumbnail ); ?>" alt="" /></a></div>
           
+            <small class="red-tags"><?php echo esc_html( $plain_tags_slug ) ?></small>
+
            <h3>
 
             <div class="iso-title"><a href="#modal_<?php echo absint( $post_id ); ?>" class="fancybox-inline"><?php echo esc_html ( $the_title );?></a>
